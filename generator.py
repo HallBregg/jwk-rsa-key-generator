@@ -4,6 +4,7 @@ import json
 import os
 import uuid
 from subprocess import Popen, PIPE
+
 from authlib.jose import JsonWebKey, JWK_ALGORITHMS
 
 
