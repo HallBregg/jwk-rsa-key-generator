@@ -1,0 +1,13 @@
+language: python
+python:
+  - '3.8'
+
+services:
+  - docker
+
+script:
+  - docker build -t jwks .
+  - docker run jwks
+
+after_script:
+  - docker images
