@@ -1,4 +1,5 @@
 # jwk-rsa-key-generator
+[![Build Status](https://travis-ci.org/HallBregg/jwk-rsa-key-generator.svg?branch=master)](https://travis-ci.org/HallBregg/jwk-rsa-key-generator)
 
 With jwk-rsa-key-generator you can generate rsa private and public keys + jwks.json file.
 
