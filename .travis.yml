@@ -1,4 +1,5 @@
 language: python
+
 python:
   - '3.8'
 
@@ -6,8 +7,10 @@ services:
   - docker
 
 script:
-  - docker build -t jwks .
-  - docker run jwks
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t docker.hallbregg.dynu.net/jwks-generator .
+  - docker run docker.hallbregg.dynu.net/jwks-generator
+  - docker push docker.hallbregg.dynu.net/jwks-generator
 
 after_script:
-  - docker images
+  - ls -la
