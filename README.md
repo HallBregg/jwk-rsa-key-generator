@@ -1,7 +1,21 @@
-# jwk-rsa-key-generator
+# JWKGen
 [![Build Status](https://travis-ci.org/HallBregg/jwk-rsa-key-generator.svg?branch=master)](https://travis-ci.org/HallBregg/jwk-rsa-key-generator)
 
-With jwk-rsa-key-generator you can generate rsa private and public keys + jwks.json file.
+JWKGen is a Python private and public keys generator.
+
+## Installation
+
+Use Docker to run image:
+```bash
+docker pull hallbregg/jwk-generator
+```
+
+## Usage
+
+Docker
+You can specify few environment variables:
+* ENV KEY_NUMBER=2
+* ENV RSA_SIZE=2048 
 
 ```sh
 $ docker run --rm -v $PWD:/keys hallbregg/jwk-generator
@@ -20,6 +34,4 @@ drwxr-xr-x  2 root root 4096 lut 22 13:33 1
 -rw-r--r--  1 root root 4174 lut 22 13:33 jwks.json
 ```
 
-You can also specify two ENVs:
-* ENV KEY_NUMBER=2
-* ENV RSA_SIZE=2048
+
