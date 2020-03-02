@@ -7,10 +7,9 @@ services:
   - docker
 
 script:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY"
-  - docker build -t docker.hallbregg.dynu.net/jwks-generator .
-  - docker run docker.hallbregg.dynu.net/jwks-generator
-  - docker push docker.hallbregg.dynu.net/jwks-generator
+  - docker build -t docker.hallbregg.dynu.net/jwks-generator:latest .
+  - docker run docker.hallbregg.dynu.net/jwks-generator:latest
 
 after_script:
-  - ls -la
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin "$DOCKER_REGISTRY"
+  - docker push docker.hallbregg.dynu.net/jwks-generator:latest
